@@ -1,0 +1,19 @@
+/**
+ * OVERVIEW
+ *
+ * This project is separated to the following style sheets:
+ *
+ * reset.css............CSS reset.
+ * base.css.............Global rules and helpers.
+ * layout.css...........CSS rules that control the layout of the page.
+ * components.css.......Own CSS for the components that build up the page.
+ *
+ */
+
+ @import "reset.css";
+
+ @import "base.css";
+ 
+ @import "layout.css";
+ 
+ @import "components.css";

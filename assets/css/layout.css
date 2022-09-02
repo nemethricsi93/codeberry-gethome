@@ -1,0 +1,106 @@
+/**
+ * CONTENTS
+ *
+ * MAIN LAYOUT - GRID SETTINGS
+ * Grid container............Grid container settings.
+ * Navigation................Navigation grid-item.
+ * Header....................Header grid-item.
+ * Content...................Content grid-item.
+ * Footer....................Footer grid-item.
+ *
+ * SUB-LAYOUT - FLEXBOX SETTINGS
+ * Flex container............Flex container settings.
+ */
+
+
+/*------------------------------------*\
+  #GRID CONTAINER
+\*------------------------------------*/
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 0;
+    padding: 0;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .grid { 
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1rem;
+      justify-items: center; 
+    }
+  }
+  
+    .grid--main {
+      grid-template-columns: 1fr 95% 1fr;
+      grid-template-areas: 
+      "navigation navigation navigation"
+      ". header ."
+      ". content ."
+      "footer footer footer";
+    }
+  
+    @media screen and (min-width: 1024px) {
+      .grid--main {
+        grid-template-columns: 1fr 80% 1fr; 
+        grid-template-areas: 
+        ". navigation ."
+        ". header ."
+        ". content ."
+        "footer footer footer";
+      }
+    }
+  
+
+    /*------------------------------------*\
+      #NAVIGATION
+    \*------------------------------------*/
+  
+    .navigation {
+      grid-area: navigation;
+      width: 100%;
+    }
+  
+  
+    /*------------------------------------*\
+      #HEADER
+    \*------------------------------------*/
+  
+    .header {
+      grid-area: header;
+      height: calc(100vh - 2.5rem);
+      padding: 1rem 0;
+    }
+   
+  
+    /*------------------------------------*\
+      #CONTENT
+    \*------------------------------------*/
+  
+    .content {
+      grid-area: content;
+    }
+  
+  
+    /*------------------------------------*\
+      #FOOTER
+    \*------------------------------------*/
+  
+    .footer {
+      grid-area: footer;
+      width:100%;
+    }
+  
+  
+  /*------------------------------------*\
+    #FLEX CONTAINER
+  \*------------------------------------*/
+  
+  .flex {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
