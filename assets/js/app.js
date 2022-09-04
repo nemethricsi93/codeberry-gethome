@@ -1,16 +1,13 @@
-console.log('A számológép használatra kész.');
-
-// Amiket ki kell számolnom:
-// fuelToOffload:
-    // Az az üzemanyagmennyiség, amit leeresztve a súlylimit alá kerülünk, de még haza tudunk jutni.
-    // fuelToOffload = tankCapacity - requiredFuel
-// tankCapacity: Az űrsikló üzemanyagtartályának űrtartalma.
-// requiredFuel: Minimális üzemanyag-mennyiség, amivel visszajutunk a Földre.
-    // Szükséges üzemanyag = Teljes táv * Átlagos fogyasztás
-    // Ahol az átlagos fogyasztás X liter / 100 km.
-    // requiredFuel = totalDistanceToTravel * (averageLitersOverHundred / 100)
-
 function calculateFuelToOffload() {
-    // 1. lépés: Számolja ki a szükséges üzemanyag-mennyiséget.
-     // 2. lépés: Számolja ki a lecsapolandó üzemanyagot.
+    var totalDistanceToTravel = prompt('Hány kilométer távolságot kíván megtenni? Adjon meg egy számot!');
+    var averageLitersOverHundred = prompt('Mi az átlagos üzemanyag fogyasztása az űrsiklónak 100 km-en?');
+    var tankCapacity = prompt('Mekkora az űrsikló tankja Literben kifejezve?');
+
+    var requiredFuel = totalDistanceToTravel * (averageLitersOverHundred / 100);
+    var fuelToOffload = tankCapacity - requiredFuel;
+
+    alert('Az utazáshoz szükséges üzemanyag-mennyiség: ' + requiredFuel + ' L\n' + 'Leadandó üzemanyag-mennyiség: ' + fuelToOffload + ' L');
+
 }
+
+calculateFuelToOffload();
